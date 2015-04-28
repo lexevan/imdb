@@ -1,0 +1,33 @@
+<% if @movie.errors.any? %>
+  Please fix the following errors:
+  <% @movie.errors.full_messages.each do |message| %>
+    <%= message %>
+  <% end %>
+<% end %>
+
+<%= form_for @movie do |f| %>
+  <%= f.label :title, 'enter movie title' %>
+  <%= f.text_field :title, class: 'form-control' %>
+    
+  <br>
+
+  <%= f.label :summary, 'enter summary here' %>
+  <%= f.text_field :summary %>
+  
+  <br>
+
+  <%= f.label :youtube_embed_id, 'enter youtube_embed_id here' %>
+  <%= f.text_field :youtube_embed_id %>
+  
+  <br>
+
+  <%= f.label :thumbnail, 'enter thumbnail here' %>
+  <%= f.text_field :thumbnail %>
+  
+  <br>
+
+
+  <%= f.submit 'Create this movie' %>
+
+
+<% end %>

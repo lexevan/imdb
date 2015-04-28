@@ -1,0 +1,28 @@
+<% if @actor.errors.any? %>
+  Please fix the following errors:
+  <% @actor.errors.full_messages.each do |message| %>
+    <%= message %>
+  <% end %>
+<% end %>
+
+<%= form_for @actor do |f| %>
+  <%= f.label :name, 'enter actor name' %>
+  <%= f.text_field :name, class: 'form-control' %>
+    
+  <br>
+
+  <%= f.label :year_of_birth, 'enter year of birth here' %>
+  <%= f.number_field :year_of_birth %>
+  
+  <br>
+
+  <%= f.label :thumbnail, 'enter thumbnail here' %>
+  <%= f.text_field :thumbnail %>
+  
+  <br>
+
+
+  <%= f.submit 'Create this actor' %>
+
+
+<% end %>
